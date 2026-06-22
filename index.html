@@ -16,6 +16,7 @@
         nav {
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             padding: 2rem 3rem;
             gap: 2rem;
         }
@@ -29,47 +30,25 @@
         main {
             max-width: 960px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem 4rem;
         }
         .hero {
-            margin-bottom: 3rem;
+            margin-bottom: 5rem;
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            max-width: 720px;
         }
         .hero .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: #666;
+            max-width: 520px;
         }
-        .hero .intro {
-            margin-top: 1.5rem;
-            font-size: 1rem;
-            color: #666;
-            max-width: 600px;
-            line-height: 1.7;
-        }
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 4rem;
-        }
-        .skill-tag {
-            border: 1px solid #e5e7eb;
-            border-radius: 100px;
-            padding: 0.35rem 0.85rem;
-            font-size: 0.8rem;
-            color: #555;
-            background: #f9fafb;
-            transition: border-color 0.2s;
-        }
-        .skill-tag:hover {
-            border-color: #d1d5db;
-        }
-        .section-title {
+        .section-label {
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -77,37 +56,51 @@
             color: #999;
             margin-bottom: 1.5rem;
         }
-        .grid {
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 5rem;
+        }
+        .skill-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 100px;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            color: #444;
+            background: #fafafa;
+        }
+        .projects-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
         }
-        .card {
+        .project-card {
             border: 1px solid #e5e7eb;
             border-radius: 12px;
             padding: 1.75rem;
             transition: box-shadow 0.2s, border-color 0.2s;
         }
-        .card:hover {
+        .project-card:hover {
             border-color: #d1d5db;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
-        .card h3 {
+        .project-card h3 {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.4rem;
         }
-        .card .meta {
+        .project-card .meta {
             font-size: 0.8rem;
             color: #3b82f6;
             margin-bottom: 0.75rem;
         }
-        .card p {
+        .project-card p {
             font-size: 0.875rem;
             color: #666;
             line-height: 1.6;
         }
-        .card a {
+        .project-card a {
             display: inline-block;
             margin-top: 1rem;
             font-size: 0.85rem;
@@ -117,19 +110,20 @@
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s;
         }
-        .card a:hover {
+        .project-card a:hover {
             border-bottom-color: #111;
         }
         footer {
             text-align: center;
-            padding: 4rem 2rem 3rem;
+            padding: 5rem 2rem 3rem;
             color: #999;
             font-size: 0.8rem;
         }
         @media (max-width: 640px) {
             nav { padding: 1.5rem; }
-            .hero h1 { font-size: 2rem; }
-            .grid { grid-template-columns: 1fr; }
+            main { padding: 3rem 1.5rem 2rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -141,44 +135,39 @@
 
     <main>
         <div class="hero">
-            <h1>Tangguh Islam</h1>
+            <h1>Hello! I'm Tangguh —<br>I build data pipelines<br>for real-time insights</h1>
             <p class="subtitle">Data Engineer / Data Scientist</p>
-            <p class="intro">
-                Hi, I'm Tangguh — I build data pipelines and turn raw data into insights.
-                I work with PostgreSQL, Docker, Metabase, Python, cloud databases, and modern BI tools.
-            </p>
         </div>
 
-        <div class="section-title">Skills</div>
-        <div class="skills">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Metabase</span>
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Jupyter</span>
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Statistics</span>
-            <span class="skill-tag">Data Analysis</span>
-            <span class="skill-tag">ETL/ELT</span>
-            <span class="skill-tag">Neon</span>
-            <span class="skill-tag">MotherDuck</span>
-            <span class="skill-tag">Streamkap</span>
-            <span class="skill-tag">DuckDB</span>
-            <span class="skill-tag">CDC</span>
+        <div class="section-label">Skills</div>
+        <div class="skills-grid">
+            <span class="skill-item">Python</span>
+            <span class="skill-item">SQL</span>
+            <span class="skill-item">PostgreSQL</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">Metabase</span>
+            <span class="skill-item">Power BI</span>
+            <span class="skill-item">Jupyter</span>
+            <span class="skill-item">Machine Learning</span>
+            <span class="skill-item">Statistics</span>
+            <span class="skill-item">Data Analysis</span>
+            <span class="skill-item">ETL / ELT</span>
+            <span class="skill-item">Neon</span>
+            <span class="skill-item">MotherDuck</span>
+            <span class="skill-item">Streamkap</span>
+            <span class="skill-item">DuckDB</span>
+            <span class="skill-item">CDC</span>
         </div>
 
-        <div class="section-title">Projects</div>
-
-        <div class="grid">
-            <div class="card">
+        <div class="section-label">Projects</div>
+        <div class="projects-grid">
+            <div class="project-card">
                 <h3>Sales Data Pipeline</h3>
                 <div class="meta">Neon · Streamkap · MotherDuck · Power BI</div>
                 <p>Real-time CDC pipeline streaming 186K sales records from PostgreSQL to DuckDB, visualized in Power BI.</p>
                 <a href="https://github.com/tangguh37/end-to-enddatasales2019">View on GitHub →</a>
             </div>
-            <div class="card">
+            <div class="project-card">
                 <h3>Tiered Risk Scoring</h3>
                 <div class="meta">Python · Jupyter · Machine Learning</div>
                 <p>ML model to predict customer loan defaults using a tiered scoring approach. Final project with riza-satrio.</p>
