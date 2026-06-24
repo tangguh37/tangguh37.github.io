@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokyo Airbnb Analytics — Tangguh Islam Wicaksana</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <a class="nav-back" href="/">← Back to portfolio</a>
+        <a href="https://github.com/tangguh37">GitHub</a>
+        <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+        <a href="mailto:tangguhislamw@gmail.com">Email</a>
+    </nav>
+
+    <main>
+        <div class="case-header">
+            <h1>Tokyo Airbnb Analytics</h1>
+            <div class="case-stack">
+                <span>DuckDB</span><span>dbt</span><span>Apache Airflow</span><span>Streamlit</span><span>Plotly</span><span>Python</span>
+            </div>
+            <div class="case-links">
+                <a href="https://github.com/tangguh37/tokyoairbnb">View on GitHub →</a>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Problem</h2>
+            <p>How do you build a production-grade analytics pipeline for Tokyo Airbnb data — from raw CSV ingestion to a live interactive dashboard — using the modern data stack with dbt, DuckDB, and Airflow?</p>
+            <p>This project ingests Inside Airbnb data (Tokyo, September 2025), transforms it through a dbt star-schema model, orchestrates everything with Apache Airflow, and visualizes insights via a Streamlit dashboard.</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Architecture</h2>
+            <div class="mermaid-container">
+                <div class="arch-diagram">
+<span class="box">┌──────────────────────┐      ┌──────────────────────┐      ┌────────────────────────────┐      ┌──────────────────┐</span>
+<span class="box">│   Inside Airbnb      │      │       DuckDB          │      │    dbt-core (duckdb)       │      │    Streamlit     │</span>
+<span class="box">│   (Tokyo, Sep 2025)  │─────▶│   Raw Tables          │─────▶│  staging → int → marts     │─────▶│  Dashboard +     │</span>
+<span class="box">│   CSVs: listings,    │      │                      │      │  star schema (dim/fact)   │      │  Plotly charts   │</span>
+<span class="box">│   reviews, calendar  │      │                      │      │  tests + docs + freshness │      │                  │</span>
+<span class="box">└──────────────────────┘      └──────────────────────┘      └────────────────────────────┘      └──────────────────┘</span>
+     <span class="label">   download_data.py          raw tables (CSV load)       dbt seed → stage → int → mart        streamlit run</span>
+     <span class="label">                                                                                                      ▲</span>
+     <span class="label">                                          ┌──────────────────────────────┐               │</span>
+     <span class="label">                                          │  Apache Airflow              │───────────────┘</span>
+     <span class="label">                                          │  Orchestrates entire DAG     │</span>
+     <span class="label">                                          └──────────────────────────────┘</span>
+
+<span class="label">                                          Data Model (Star Schema):</span>
+<span class="label">                                          ├── dim_listing</span>
+<span class="label">                                          ├── dim_host</span>
+<span class="label">                                          ├── dim_neighbourhood</span>
+<span class="label">                                          ├── fct_reviews (incremental)</span>
+<span class="label">                                          ├── fct_calendar (incremental)</span>
+<span class="label">                                          ├── monthly_occupancy</span>
+<span class="label">                                          └── pricing_analysis</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Key Results</h2>
+            <div class="highlight-box">
+                <div class="stat">3</div>
+                <div class="stat-label">Data sources: listings, reviews, calendar</div>
+            </div>
+            <div class="highlight-box">
+                <div class="stat">7</div>
+                <div class="stat-label">dbt models across staging, intermediate, mart layers</div>
+            </div>
+            <div class="highlight-box">
+                <div class="stat">100%</div>
+                <div class="stat-label">Source freshness checks + data quality tests</div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Tech Stack</h2>
+            <ul>
+                <li><strong>DuckDB</strong> — Embedded OLAP database for storage and querying</li>
+                <li><strong>dbt-core + dbt-duckdb</strong> — Transformation with medallion architecture</li>
+                <li><strong>Apache Airflow</strong> — DAG orchestration for the full pipeline</li>
+                <li><strong>Streamlit + Plotly</strong> — Interactive dashboard with visualizations</li>
+                <li><strong>Python</strong> — Data download and ingestion scripts</li>
+                <li><strong>Source</strong> — Inside Airbnb (Tokyo, September 2025)</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>What I Built</h2>
+            <p>Built a fully orchestrated analytics pipeline: Python script to download and ingest Airbnb CSVs into DuckDB raw tables, then a dbt project with staging views, intermediate enrichment, and mart tables following a star schema. Implemented generic and singular tests, source freshness checks, incremental models for fact tables, and dbt docs with exposure linking to the Streamlit dashboard. Airflow orchestrates the entire DAG from download to dashboard refresh.</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Learnings</h2>
+            <p>This project solidified my understanding of the medallion architecture (bronze → silver → gold) in practice. Key takeaways: DuckDB + dbt is a powerful lightweight combination for local analytics, Airflow DAGs need careful dependency management, and Streamlit + Plotly enables rapid dashboard prototyping without a heavy frontend framework.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/tangguh37">GitHub</a>
+            <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+            <a href="mailto:tangguhislamw@gmail.com">Email</a>
+        </div>
+        © 2026 Tangguh Islam Wicaksana
+    </footer>
+</body>
+</html>

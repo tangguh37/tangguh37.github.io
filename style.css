@@ -1,0 +1,304 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+    background: #0a0a0a;
+    color: #e5e5e5;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem 3rem;
+    gap: 2rem;
+}
+nav a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+nav a:hover { color: #3b82f6; }
+nav .nav-back {
+    margin-right: auto;
+    color: #3b82f6;
+    font-size: 0.85rem;
+}
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+}
+.hero {
+    margin-bottom: 4rem;
+}
+.hero .name {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+}
+.hero .subtitle {
+    font-size: 1.1rem;
+    color: #3b82f6;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+.hero .greeting {
+    font-size: 1.25rem;
+    color: #999;
+    max-width: 520px;
+}
+.hero .greeting .highlight {
+    color: #e5e5e5;
+}
+.section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #666;
+    margin-bottom: 1.25rem;
+}
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+}
+.skill-item {
+    border: 1px solid #2a2a2a;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    color: #aaa;
+    background: #1a1a1a;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 4rem;
+}
+.project-card {
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.project-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 20px rgba(59,130,246,0.08);
+}
+.project-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+.project-card .meta {
+    font-size: 0.8rem;
+    color: #3b82f6;
+    margin-bottom: 0.65rem;
+}
+.project-card p {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.6;
+}
+.project-card .card-footer {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-size: 0.85rem;
+    color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+.project-card:hover .card-footer {
+    border-bottom-color: #3b82f6;
+    color: #3b82f6;
+}
+.project-card .wip {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+}
+.list-section {
+    margin-bottom: 4rem;
+}
+.list-item {
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s;
+}
+.list-item:hover {
+    border-color: #3b82f6;
+}
+.list-item .item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.list-item .item-sub {
+    font-size: 0.85rem;
+    color: #3b82f6;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+.list-item .item-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+.list-item p {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.6;
+}
+footer {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    color: #666;
+    font-size: 0.85rem;
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-links a:hover {
+    color: #3b82f6;
+}
+/* Case study page styles */
+.case-header {
+    margin-bottom: 3rem;
+}
+.case-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+}
+.case-header .case-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.case-header .case-stack span {
+    border: 1px solid #2a2a2a;
+    border-radius: 100px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    color: #3b82f6;
+    background: #1a1a1a;
+}
+.case-header .case-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.case-header .case-links a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.case-header .case-links a:hover {
+    text-decoration: underline;
+}
+.case-section {
+    margin-bottom: 2.5rem;
+}
+.case-section h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #e5e5e5;
+}
+.case-section p {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+.case-section ul {
+    list-style: none;
+    padding: 0;
+}
+.case-section ul li {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.7;
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.3rem;
+}
+.case-section ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+}
+.case-section .highlight-box {
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 1.25rem;
+    background: #111;
+    margin: 1rem 0;
+}
+.case-section .highlight-box .stat {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+}
+.case-section .highlight-box .stat-label {
+    font-size: 0.85rem;
+    color: #999;
+}
+/* Mermaid diagram container */
+.mermaid-container {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+/* Architecture text diagram */
+.arch-diagram {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #aaa;
+    white-space: pre;
+    overflow-x: auto;
+}
+.arch-diagram .arrow { color: #3b82f6; }
+.arch-diagram .box { color: #e5e5e5; }
+.arch-diagram .label { color: #666; font-style: italic; }
+@media (max-width: 640px) {
+    nav { padding: 1.5rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    nav .nav-back { margin-right: 0; width: 100%; text-align: center; }
+    main { padding: 2rem 1.5rem; }
+    .hero .name { font-size: 2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .case-header h1 { font-size: 1.5rem; }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiered Risk Scoring — Tangguh Islam Wicaksana</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <a class="nav-back" href="/">← Back to portfolio</a>
+        <a href="https://github.com/tangguh37">GitHub</a>
+        <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+        <a href="mailto:tangguhislamw@gmail.com">Email</a>
+    </nav>
+
+    <main>
+        <div class="case-header">
+            <h1>Tiered Risk Scoring</h1>
+            <div class="case-stack">
+                <span>Python</span><span>Jupyter</span><span>Machine Learning</span><span>Scikit-learn</span><span>Pandas</span>
+            </div>
+            <div class="case-links">
+                <a href="https://github.com/riza-satrio/final-project">View on GitHub →</a>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Problem</h2>
+            <p>Banks need to assess loan default risk for customers, but traditional scoring models are often black boxes. This project builds a transparent, <strong>tiered risk scoring system</strong> that classifies customers into risk levels — enabling lenders to make informed decisions.</p>
+            <p>Final project for the Data Science Bootcamp (Don Quixote cohort), selected as the best group project.</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Architecture</h2>
+            <div class="mermaid-container">
+                <div class="arch-diagram">
+<span class="box">┌──────────────────┐      ┌──────────────────┐      ┌────────────────────┐      ┌──────────────────┐</span>
+<span class="box">│   Raw Data       │─────▶│  Data Cleaning   │─────▶│  Feature           │─────▶│  Model Training  │</span>
+<span class="box">│   Loan Dataset   │      │  & EDA           │      │  Engineering       │      │  & Evaluation    │</span>
+<span class="box">└──────────────────┘      └──────────────────┘      └────────────────────┘      └──────────────────┘</span>
+                                                                                           │
+                                                                                           ▼
+<span class="box">                              ┌──────────────────┐      ┌────────────────────┐      ┌──────────────────┐</span>
+<span class="box">                              │  Deployment      │◀─────│   Risk Tier        │◀─────│  Best Model      │</span>
+<span class="box">                              │  & Prediction    │      │   Classification   │      │  (selected)      │</span>
+<span class="box">                              └──────────────────┘      └────────────────────┘      └──────────────────┘</span>
+
+                    <span class="label">Risk Tiers: Low | Medium | High | Very High</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Key Results</h2>
+            <div class="highlight-box">
+                <div class="stat">#1</div>
+                <div class="stat-label">Best Group Project (Don Quixote cohort)</div>
+            </div>
+            <div class="highlight-box">
+                <div class="stat">4</div>
+                <div class="stat-label">Risk tiers: Low, Medium, High, Very High</div>
+            </div>
+            <div class="highlight-box">
+                <div class="stat">Multiple</div>
+                <div class="stat-label">Models compared: Logistic Regression, Random Forest, XGBoost</div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Tech Stack</h2>
+            <ul>
+                <li><strong>Python</strong> — Core programming language</li>
+                <li><strong>Jupyter Notebook</strong> — Interactive development and documentation</li>
+                <li><strong>Scikit-learn</strong> — ML models (Logistic Regression, Random Forest)</li>
+                <li><strong>XGBoost</strong> — Gradient boosting for improved accuracy</li>
+                <li><strong>Pandas / NumPy</strong> — Data manipulation and preprocessing</li>
+                <li><strong>Matplotlib / Seaborn</strong> — Visualizations and EDA</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>What I Built</h2>
+            <p>As Project Lead, I led the end-to-end execution: strategic planning, task scheduling, decision-making, and team direction. Built and compared multiple classification models, engineered features from raw loan data, and implemented a tiered scoring system that maps prediction probabilities to interpretable risk levels (Low → Medium → High → Very High).</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Learnings</h2>
+            <p>Leading a team project taught me that clear communication about model trade-offs is as important as technical implementation. The tiered approach makes ML accessible to non-technical stakeholders — they don't need to understand log-odds, they just need to know which tier a customer falls into.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/tangguh37">GitHub</a>
+            <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+            <a href="mailto:tangguhislamw@gmail.com">Email</a>
+        </div>
+        © 2026 Tangguh Islam Wicaksana
+    </footer>
+</body>
+</html>

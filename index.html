@@ -4,194 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tangguh Islam Wicaksana — Data Engineer / Data Scientist</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #e5e5e5;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 2rem 3rem;
-            gap: 2rem;
-        }
-        nav a {
-            color: #999;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        nav a:hover { color: #3b82f6; }
-        main {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 5rem 2rem 4rem;
-        }
-        .hero {
-            margin-bottom: 4rem;
-        }
-        .hero .name {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 0.75rem;
-        }
-        .hero .subtitle {
-            font-size: 1.1rem;
-            color: #3b82f6;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        .hero .greeting {
-            font-size: 1.25rem;
-            color: #999;
-            max-width: 520px;
-        }
-        .hero .greeting .highlight {
-            color: #e5e5e5;
-        }
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #666;
-            margin-bottom: 1.25rem;
-        }
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 4rem;
-        }
-        .skill-item {
-            border: 1px solid #2a2a2a;
-            border-radius: 100px;
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-            color: #aaa;
-            background: #1a1a1a;
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-            margin-bottom: 4rem;
-        }
-        .project-card {
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .project-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 4px 20px rgba(59,130,246,0.08);
-        }
-        .project-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-        }
-        .project-card .meta {
-            font-size: 0.8rem;
-            color: #3b82f6;
-            margin-bottom: 0.65rem;
-        }
-        .project-card p {
-            font-size: 0.85rem;
-            color: #999;
-            line-height: 1.6;
-        }
-        .project-card a {
-            display: inline-block;
-            margin-top: 0.85rem;
-            font-size: 0.85rem;
-            color: #e5e5e5;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
-        .project-card a:hover {
-            border-bottom-color: #3b82f6;
-            color: #3b82f6;
-        }
-        .project-card .wip {
-            display: inline-block;
-            margin-top: 0.85rem;
-            font-size: 0.8rem;
-            color: #666;
-            font-style: italic;
-        }
-        .list-section {
-            margin-bottom: 4rem;
-        }
-        .list-item {
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 1rem;
-            transition: border-color 0.2s;
-        }
-        .list-item:hover {
-            border-color: #3b82f6;
-        }
-        .list-item .item-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-        .list-item .item-sub {
-            font-size: 0.85rem;
-            color: #3b82f6;
-            font-weight: 500;
-            margin-bottom: 0.4rem;
-        }
-        .list-item .item-meta {
-            font-size: 0.8rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        .list-item p {
-            font-size: 0.85rem;
-            color: #999;
-            line-height: 1.6;
-        }
-        footer {
-            text-align: center;
-            padding: 4rem 2rem 3rem;
-            color: #666;
-            font-size: 0.85rem;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-links a:hover {
-            color: #3b82f6;
-        }
-        @media (max-width: 640px) {
-            nav { padding: 1.5rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-            main { padding: 3rem 1.5rem 2rem; }
-            .hero .name { font-size: 2rem; }
-            .projects-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <nav>
@@ -238,36 +51,36 @@
 
         <div class="section-label">Projects</div>
         <div class="projects-grid">
-            <div class="project-card">
+            <a href="/projects/sales-pipeline.html" class="project-card">
                 <h3>Sales Data Pipeline</h3>
                 <div class="meta">Neon · Streamkap · MotherDuck · Power BI</div>
                 <p>Real-time CDC pipeline streaming 186K sales records from PostgreSQL to DuckDB, visualized in Power BI.</p>
-                <a href="https://github.com/tangguh37/end-to-enddatasales2019">View on GitHub →</a>
-            </div>
-            <div class="project-card">
+                <span class="card-footer">View case study →</span>
+            </a>
+            <a href="/projects/risk-scoring.html" class="project-card">
                 <h3>Tiered Risk Scoring</h3>
                 <div class="meta">Python · Jupyter · Machine Learning</div>
-                <p>ML model to predict customer loan defaults using a tiered scoring approach. Final project with riza-satrio.</p>
-                <a href="https://github.com/riza-satrio/final-project">View on GitHub →</a>
-            </div>
-            <div class="project-card">
+                <p>ML model to predict customer loan defaults using a tiered scoring approach.</p>
+                <span class="card-footer">View case study →</span>
+            </a>
+            <a href="/projects/tokyo-airbnb.html" class="project-card">
                 <h3>Tokyo Airbnb Analytics</h3>
                 <div class="meta">DuckDB · dbt · Apache Airflow · Streamlit</div>
-                <p>End-to-end analytics pipeline for Tokyo Airbnb data — dbt transformations, Airflow orchestration, Streamlit dashboard.</p>
-                <a href="https://github.com/tangguh37/tokyoairbnb">View on GitHub →</a>
-            </div>
-            <div class="project-card">
+                <p>End-to-end analytics pipeline with dbt transformations, Airflow orchestration, and a Streamlit dashboard.</p>
+                <span class="card-footer">View case study →</span>
+            </a>
+            <a href="/projects/mycargologistik.html" class="project-card">
                 <h3>MyCargoLogistik Dashboard</h3>
                 <div class="meta">PostgreSQL · Metabase · Python</div>
-                <p>Monthly logistics performance dashboard for a freight forwarding company, from Excel to PostgreSQL to Metabase.</p>
-                <a href="https://github.com/tangguh37/mycargologistik">View on GitHub →</a>
-            </div>
-            <div class="project-card">
+                <p>Monthly logistics performance dashboard from Excel to PostgreSQL to Metabase.</p>
+                <span class="card-footer">View case study →</span>
+            </a>
+            <a href="/projects/wa-extractor.html" class="project-card">
                 <h3>WhatsApp Timestamp Extractor</h3>
                 <div class="meta">Python · Tesseract OCR · openpyxl</div>
-                <p>Extracts visible timestamps from photos shared in WhatsApp groups using OCR and cross-references with chat exports.</p>
+                <p>Extracts visible timestamps from photos in WhatsApp groups using OCR.</p>
                 <span class="wip">🚧 WIP</span>
-            </div>
+            </a>
         </div>
 
         <div class="section-label">Experience</div>

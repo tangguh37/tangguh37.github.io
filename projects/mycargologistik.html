@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCargoLogistik Dashboard — Tangguh Islam Wicaksana</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <a class="nav-back" href="/">← Back to portfolio</a>
+        <a href="https://github.com/tangguh37">GitHub</a>
+        <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+        <a href="mailto:tangguhislamw@gmail.com">Email</a>
+    </nav>
+
+    <main>
+        <div class="case-header">
+            <h1>MyCargoLogistik Dashboard</h1>
+            <div class="case-stack">
+                <span>PostgreSQL</span><span>Metabase</span><span>Python</span><span>Excel</span>
+            </div>
+            <div class="case-links">
+                <a href="https://github.com/tangguh37/mycargologistik">View on GitHub →</a>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Problem</h2>
+            <p>A freight forwarding company (MyKargo Logistik Yogyakarta) needed a monthly logistics performance dashboard. The data was locked in Excel reports with sensitive customer information — requiring anonymization before building a reusable analytics system.</p>
+            <p>This project transforms Excel reports → anonymized mock data → PostgreSQL → Metabase dashboards for real-time KPI tracking.</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Architecture</h2>
+            <div class="mermaid-container">
+                <div class="arch-diagram">
+<span class="box">┌──────────────────┐      ┌─────────────────────┐      ┌──────────────────┐      ┌──────────────────────┐</span>
+<span class="box">│   Excel Report   │─────▶│   Python Script     │─────▶│   PostgreSQL     │─────▶│      Metabase        │</span>
+<span class="box">│   (raw data)     │      │   anonymize.py      │      │   (Warehouse)    │      │   3 Dashboards       │</span>
+<span class="box">└──────────────────┘      │   Generates mock    │      │  monthly_reports │      │  Overall Performance │</span>
+     <span class="label">   monthly export       │   data with:       │      │  table (11 cols) │      │  This Month Snapshot  │</span>
+                           │   - 180 customers   │      │                  │      │  Marketing (MKT)     │</span>
+                           │   - 2 whales (80%)  │      │                  │      └──────────────────────┘
+                           │   - 9 salespeople   │      │                  │
+                           │   - 3 tiers         │      │                  │
+                           │   - seasonality     │      │                  │
+                           │   - 24% target      │      │                  │
+                           │   margin            │      │                  │
+                           └─────────────────────┘      └──────────────────┘
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Key Results</h2>
+            <div class="highlight-box">
+                <div class="stat">3</div>
+                <div class="stat-label">Metabase dashboards: Overall, Monthly, MKT</div>
+            </div>
+            <div class="highlight-box">
+                <div class="stat">1,429</div>
+                <div class="stat-label">Anonymized mock data rows generated</div>
+            </div>
+            <div class="highlight-box">
+                <div class="stat">100%</div>
+                <div class="stat-label">Python stdlib only — no external dependencies</div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Tech Stack</h2>
+            <ul>
+                <li><strong>PostgreSQL</strong> — Relational database for structured storage</li>
+                <li><strong>Metabase</strong> — Open-source BI tool for dashboarding</li>
+                <li><strong>Python 3 (stdlib)</strong> — Anonymization script with zero dependencies</li>
+                <li><strong>Excel</strong> — Source data cleaning and preparation</li>
+                <li><strong>SQL</strong> — Table creation, data loading, and analytical queries</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>What I Built</h2>
+            <p>Designed the anonymization algorithm in Python: 180 unique customers with 2 "whales" generating ~80% revenue, 9 salespeople across 3 performance tiers, realistic job-type mix (~40% Export, ~25% Import, ~35% Other), monthly seasonality patterns, and ~24% target margin. Built the PostgreSQL schema with a single <code>monthly_reports</code> table (11 columns). Created 3 Metabase dashboards: Overall Performance (revenue/cost trends), This Month Snapshot (real-time KPIs), and Marketing Performance (MKT team tracking).</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Learnings</h2>
+            <p>This project taught me how to handle sensitive data responsibly — anonymization is a critical skill for real-world data work. Building realistic synthetic data requires understanding the business domain deeply. Metabase is surprisingly powerful for its simplicity; dashboards can be built in minutes once the schema is right.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/tangguh37">GitHub</a>
+            <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+            <a href="mailto:tangguhislamw@gmail.com">Email</a>
+        </div>
+        © 2026 Tangguh Islam Wicaksana
+    </footer>
+</body>
+</html>

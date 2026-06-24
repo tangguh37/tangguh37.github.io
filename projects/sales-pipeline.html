@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Data Pipeline — Tangguh Islam Wicaksana</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <a class="nav-back" href="/">← Back to portfolio</a>
+        <a href="https://github.com/tangguh37">GitHub</a>
+        <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+        <a href="mailto:tangguhislamw@gmail.com">Email</a>
+    </nav>
+
+    <main>
+        <div class="case-header">
+            <h1>Sales Data Pipeline</h1>
+            <div class="case-stack">
+                <span>Neon</span><span>Streamkap</span><span>MotherDuck</span><span>DuckDB</span><span>Power BI</span><span>CDC</span>
+            </div>
+            <div class="case-links">
+                <a href="https://github.com/tangguh37/end-to-enddatasales2019">View on GitHub →</a>
+                <a href="https://github.com/tangguh37/rowdb-neon-motherduck">Project Docs →</a>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Problem</h2>
+            <p>How do you stream 186,000 rows of transactional sales data from a PostgreSQL database into an analytics warehouse in real-time — without writing complex ETL scripts or managing infrastructure?</p>
+            <p>This project demonstrates a modern CDC (Change Data Capture) pipeline: Neon (serverless PostgreSQL) → Streamkap (CDC engine) → MotherDuck (cloud DuckDB) → Power BI dashboard.</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Architecture</h2>
+            <div class="mermaid-container">
+                <div class="arch-diagram">
+<span class="box">┌─────────────────────┐      ┌──────────────────────┐      ┌──────────────────────┐      ┌─────────────────┐</span>
+<span class="box">│       Neon          │      │      Streamkap        │      │     MotherDuck        │      │    Power BI      │</span>
+<span class="box">│  Serverless PG      │─────▶│   CDC Engine          │─────▶│   Cloud DuckDB        │─────▶│   Dashboard      │</span>
+<span class="box">│  (OLTP / Source)    │      │  Logical Replication  │      │  (OLAP / Analytics)   │      │  Visualizations  │</span>
+<span class="box">└─────────────────────┘      └──────────────────────┘      └──────────────────────┘      └─────────────────┘</span>
+      <span class="label">  publication: streamkap_pub           JDBC sink              PG endpoint         DirectQuery / Import</span>
+
+<span class="label">                                         ┌──────────────────────────────┐</span>
+<span class="label">                                         │  MotherDuck Schema            │</span>
+<span class="label">                                         │  ├── streamkap.sales (raw)    │</span>
+<span class="label">                                         │  ├── analytics.v_monthly_sales│</span>
+<span class="label">                                         │  ├── analytics.v_top_products │</span>
+<span class="label">                                         │  ├── analytics.v_daily_sales  │</span>
+<span class="label">                                         │  └── analytics.v_sales_by_city│</span>
+<span class="label">                                         └──────────────────────────────┘</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Key Results</h2>
+            <div class="highlight-box">
+                <div class="stat">186K</div>
+                <div class="stat-label">Sales records streamed in real-time</div>
+            </div>
+            <div class="highlight-box">
+                <div class="stat">19</div>
+                <div class="stat-label">Product categories across the US</div>
+            </div>
+            <div class="highlight-box">
+                <div class="stat">&lt; 5s</div>
+                <div class="stat-label">Latency from source to dashboard</div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Tech Stack</h2>
+            <ul>
+                <li><strong>Neon</strong> — Serverless PostgreSQL as source OLTP database with logical replication</li>
+                <li><strong>Streamkap</strong> — CDC engine reading via publication, writing via JDBC sink</li>
+                <li><strong>MotherDuck</strong> — Cloud DuckDB with raw (streamkap) and analytics schemas</li>
+                <li><strong>DuckDB</strong> — Analytical query engine powering aggregated views</li>
+                <li><strong>Power BI</strong> — BI tool connected via MotherDuck's PostgreSQL endpoint</li>
+                <li><strong>Kaggle Dataset</strong> — 2019 electronics store sales data</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>What I Built</h2>
+            <p>Configured Neon with a dedicated publication (<code>streamkap_pub</code>) for logical replication. Set up Streamkap source connector pointing to Neon and destination connector writing to MotherDuck via JDBC. Designed MotherDuck schemas: <code>streamkap</code> (raw CDC data) and <code>analytics</code> with aggregated views including monthly sales trends, top products, daily sales, and geographic breakdowns by city. Connected Power BI using DirectQuery for live dashboarding.</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Learnings</h2>
+            <p>This was my first end-to-end CDC pipeline using the modern data stack. Key takeaways: logical replication requires careful publication configuration, CDC latency is highly dependent on network and batch settings, and MotherDuck's PG-compatible endpoint makes it trivial to connect BI tools without custom connectors.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/tangguh37">GitHub</a>
+            <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+            <a href="mailto:tangguhislamw@gmail.com">Email</a>
+        </div>
+        © 2026 Tangguh Islam Wicaksana
+    </footer>
+</body>
+</html>

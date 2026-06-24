@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Timestamp Extractor — Tangguh Islam Wicaksana</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <a class="nav-back" href="/">← Back to portfolio</a>
+        <a href="https://github.com/tangguh37">GitHub</a>
+        <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+        <a href="mailto:tangguhislamw@gmail.com">Email</a>
+    </nav>
+
+    <main>
+        <div class="case-header">
+            <h1>WhatsApp Timestamp Extractor</h1>
+            <div class="case-stack">
+                <span>Python</span><span>Tesseract OCR</span><span>OpenPyXL</span><span>Pillow</span>
+            </div>
+            <div class="case-links">
+                <span style="color:#666;font-size:0.85rem;">🚧 Work in Progress</span>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Problem</h2>
+            <p>Photos shared in WhatsApp groups often contain visible timestamps (e.g., delivery receipts, event photos), but extracting them manually is tedious. This tool automates the process: OCR-read timestamps from images and cross-reference them with the WhatsApp chat export to identify senders.</p>
+        </div>
+
+        <div class="case-section">
+            <h2>Architecture</h2>
+            <div class="mermaid-container">
+                <div class="arch-diagram">
+<span class="box">┌──────────────────┐      ┌─────────────────────┐      ┌──────────────────────┐      ┌──────────────────┐</span>
+<span class="box">│   WhatsApp       │─────▶│   Parse Export      │─────▶│   Tesseract OCR     │─────▶│   Excel Report   │</span>
+<span class="box">│   Chat Export    │      │   Map photo →       │      │   Multi-pass per    │      │   Sender, Photo, │</span>
+<span class="box">│   _chat.txt      │      │   sender name        │      │   image (grayscale, │      │   Timestamp      │</span>
+<span class="box">└──────────────────┘      └─────────────────────┘      │   high contrast,    │      └──────────────────┘</span>
+                                                          │   threshold)         │
+                                                          └──────────────────────┘
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h2>Planned Features</h2>
+            <ul>
+                <li>Parse WhatsApp export zip to extract photo-to-sender mapping</li>
+                <li>Multi-pass OCR with different preprocessing for each image</li>
+                <li>Date/time pattern recognition from OCR output</li>
+                <li>Excel report with sender, photo filename, extracted timestamp</li>
+                <li>Summary statistics by person</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>Tech Stack</h2>
+            <ul>
+                <li><strong>Python 3</strong> — Core programming language</li>
+                <li><strong>Tesseract (tesserocr)</strong> — OCR engine for text extraction from images</li>
+                <li><strong>Pillow</strong> — Image preprocessing (grayscale, contrast, threshold)</li>
+                <li><strong>OpenPyXL</strong> — Excel report generation</li>
+                <li><strong>python-dateutil</strong> — Flexible date/time parsing</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>Status</h2>
+            <p style="color:#666;">🚧 This project is still under development. Check back later for updates, or follow the project on GitHub.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/tangguh37">GitHub</a>
+            <a href="https://www.linkedin.com/in/tangguhiw/">LinkedIn</a>
+            <a href="mailto:tangguhislamw@gmail.com">Email</a>
+        </div>
+        © 2026 Tangguh Islam Wicaksana
+    </footer>
+</body>
+</html>
