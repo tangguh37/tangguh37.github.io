@@ -302,3 +302,37 @@ footer {
     .projects-grid { grid-template-columns: 1fr; }
     .case-header h1 { font-size: 1.5rem; }
 }
+/* Screenshot gallery */
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+.screenshot-grid.single {
+    grid-template-columns: 1fr;
+}
+.screenshot-card {
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+.screenshot-card:hover {
+    border-color: #3b82f6;
+}
+.screenshot-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #2a2a2a;
+}
+.screenshot-card .caption {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    color: #999;
+    background: #111;
+}
+@media (max-width: 640px) {
+    .screenshot-grid { grid-template-columns: 1fr; }
+}

@@ -88,6 +88,16 @@
             <p>Configured Neon with a dedicated publication (<code>streamkap_pub</code>) for logical replication. Set up Streamkap source connector pointing to Neon and destination connector writing to MotherDuck via JDBC. Designed MotherDuck schemas: <code>streamkap</code> (raw CDC data) and <code>analytics</code> with aggregated views including monthly sales trends, top products, daily sales, and geographic breakdowns by city. Connected Power BI using DirectQuery for live dashboarding.</p>
         </div>
 
+
+        <div class="case-section">
+            <h2>Dashboard Preview</h2>
+            <div class="screenshot-grid single">
+                <div class="screenshot-card">
+                    <img src="/images/sales-powerbi.png" alt="Sales Data Pipeline - Power BI Dashboard">
+                    <div class="caption">Power BI dashboard: real-time sales metrics, monthly trends, top products, and city-wise breakdown</div>
+                </div>
+            </div>
+        </div>
         <div class="case-section">
             <h2>Learnings</h2>
             <p>This was my first end-to-end CDC pipeline using the modern data stack. Key takeaways: logical replication requires careful publication configuration, CDC latency is highly dependent on network and batch settings, and MotherDuck's PG-compatible endpoint makes it trivial to connect BI tools without custom connectors.</p>

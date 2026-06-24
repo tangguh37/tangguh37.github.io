@@ -93,6 +93,24 @@
             <p>Built a fully orchestrated analytics pipeline: Python script to download and ingest Airbnb CSVs into DuckDB raw tables, then a dbt project with staging views, intermediate enrichment, and mart tables following a star schema. Implemented generic and singular tests, source freshness checks, incremental models for fact tables, and dbt docs with exposure linking to the Streamlit dashboard. Airflow orchestrates the entire DAG from download to dashboard refresh.</p>
         </div>
 
+
+        <div class="case-section">
+            <h2>Dashboard Preview</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <img src="/images/airbnb-dashboard.png" alt="Tokyo Airbnb Dashboard - Pricing & Listings">
+                    <div class="caption">Overview dashboard: pricing by neighbourhood, room type distribution, and key market metrics</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/images/airbnb-insight1.png" alt="Tokyo Airbnb - Host Analysis">
+                    <div class="caption">Host analysis: Superhost vs Regular host comparison, rating tiers, and booking performance</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/images/airbnb-insight2.png" alt="Tokyo Airbnb - Market Insights">
+                    <div class="caption">Market insights: seasonality trends, neighbourhood arbitrage, and strategic recommendations</div>
+                </div>
+            </div>
+        </div>
         <div class="case-section">
             <h2>Learnings</h2>
             <p>This project solidified my understanding of the medallion architecture (bronze → silver → gold) in practice. Key takeaways: DuckDB + dbt is a powerful lightweight combination for local analytics, Airflow DAGs need careful dependency management, and Streamlit + Plotly enables rapid dashboard prototyping without a heavy frontend framework.</p>
