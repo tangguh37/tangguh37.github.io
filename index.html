@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tangguh Islam — Data Engineer / Data Scientist</title>
+    <title>Tangguh Islam Wicaksana — Data Engineer / Data Scientist</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
-            background: #fff;
-            color: #111;
+            background: #0a0a0a;
+            color: #e5e5e5;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
@@ -21,102 +21,153 @@
             gap: 2rem;
         }
         nav a {
-            color: #666;
+            color: #999;
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.2s;
         }
-        nav a:hover { color: #111; }
+        nav a:hover { color: #3b82f6; }
         main {
             max-width: 960px;
             margin: 0 auto;
-            padding: 6rem 2rem 4rem;
+            padding: 5rem 2rem 4rem;
         }
         .hero {
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
         }
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-            max-width: 720px;
+        .hero .name {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
         }
         .hero .subtitle {
             font-size: 1.1rem;
-            color: #666;
+            color: #3b82f6;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        .hero .greeting {
+            font-size: 1.25rem;
+            color: #999;
             max-width: 520px;
+        }
+        .hero .greeting .highlight {
+            color: #e5e5e5;
         }
         .section-label {
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: #999;
-            margin-bottom: 1.5rem;
+            color: #666;
+            margin-bottom: 1.25rem;
         }
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
         }
         .skill-item {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #2a2a2a;
             border-radius: 100px;
             padding: 0.5rem 1rem;
             font-size: 0.85rem;
-            color: #444;
-            background: #fafafa;
+            color: #aaa;
+            background: #1a1a1a;
         }
         .projects-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 1.25rem;
+            margin-bottom: 4rem;
         }
         .project-card {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #2a2a2a;
             border-radius: 12px;
-            padding: 1.75rem;
-            transition: box-shadow 0.2s, border-color 0.2s;
+            padding: 1.5rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
         .project-card:hover {
-            border-color: #d1d5db;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-color: #3b82f6;
+            box-shadow: 0 4px 20px rgba(59,130,246,0.08);
         }
         .project-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.35rem;
         }
         .project-card .meta {
             font-size: 0.8rem;
             color: #3b82f6;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.65rem;
         }
         .project-card p {
-            font-size: 0.875rem;
-            color: #666;
+            font-size: 0.85rem;
+            color: #999;
             line-height: 1.6;
         }
         .project-card a {
             display: inline-block;
-            margin-top: 1rem;
+            margin-top: 0.85rem;
             font-size: 0.85rem;
-            color: #111;
+            color: #e5e5e5;
             text-decoration: none;
             font-weight: 500;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s;
         }
         .project-card a:hover {
-            border-bottom-color: #111;
+            border-bottom-color: #3b82f6;
+            color: #3b82f6;
+        }
+        .project-card .wip {
+            display: inline-block;
+            margin-top: 0.85rem;
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+        }
+        .list-section {
+            margin-bottom: 4rem;
+        }
+        .list-item {
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s;
+        }
+        .list-item:hover {
+            border-color: #3b82f6;
+        }
+        .list-item .item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        .list-item .item-sub {
+            font-size: 0.85rem;
+            color: #3b82f6;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+        .list-item .item-meta {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .list-item p {
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.6;
         }
         footer {
             text-align: center;
-            padding: 5rem 2rem 3rem;
-            color: #999;
+            padding: 4rem 2rem 3rem;
+            color: #666;
             font-size: 0.85rem;
         }
         .footer-links {
@@ -127,17 +178,17 @@
             flex-wrap: wrap;
         }
         .footer-links a {
-            color: #999;
+            color: #666;
             text-decoration: none;
             transition: color 0.2s;
         }
         .footer-links a:hover {
-            color: #111;
+            color: #3b82f6;
         }
         @media (max-width: 640px) {
             nav { padding: 1.5rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
             main { padding: 3rem 1.5rem 2rem; }
-            .hero h1 { font-size: 1.8rem; }
+            .hero .name { font-size: 2rem; }
             .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -152,8 +203,12 @@
 
     <main>
         <div class="hero">
-            <h1>Hello! I'm Tangguh —<br>I build data pipelines<br>for real-time insights</h1>
-            <p class="subtitle">Data Engineer / Data Scientist</p>
+            <h1 class="name">Tangguh Islam Wicaksana</h1>
+            <div class="subtitle">Data Engineer / Data Scientist</div>
+            <div class="greeting">
+                Hello! I'm Tangguh<br>
+                <span class="highlight">Data Scientist with data engineering expertise</span>
+            </div>
         </div>
 
         <div class="section-label">Skills</div>
@@ -174,6 +229,11 @@
             <span class="skill-item">Streamkap</span>
             <span class="skill-item">DuckDB</span>
             <span class="skill-item">CDC</span>
+            <span class="skill-item">dbt</span>
+            <span class="skill-item">Apache Airflow</span>
+            <span class="skill-item">Streamlit</span>
+            <span class="skill-item">Plotly</span>
+            <span class="skill-item">Excel</span>
         </div>
 
         <div class="section-label">Projects</div>
@@ -190,6 +250,56 @@
                 <p>ML model to predict customer loan defaults using a tiered scoring approach. Final project with riza-satrio.</p>
                 <a href="https://github.com/riza-satrio/final-project">View on GitHub →</a>
             </div>
+            <div class="project-card">
+                <h3>Tokyo Airbnb Analytics</h3>
+                <div class="meta">DuckDB · dbt · Apache Airflow · Streamlit</div>
+                <p>End-to-end analytics pipeline for Tokyo Airbnb data — dbt transformations, Airflow orchestration, Streamlit dashboard.</p>
+                <a href="https://github.com/tangguh37/tokyoairbnb">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>MyCargoLogistik Dashboard</h3>
+                <div class="meta">PostgreSQL · Metabase · Python</div>
+                <p>Monthly logistics performance dashboard for a freight forwarding company, from Excel to PostgreSQL to Metabase.</p>
+                <a href="https://github.com/tangguh37/mycargologistik">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>WhatsApp Timestamp Extractor</h3>
+                <div class="meta">Python · Tesseract OCR · openpyxl</div>
+                <p>Extracts visible timestamps from photos shared in WhatsApp groups using OCR and cross-references with chat exports.</p>
+                <span class="wip">🚧 WIP</span>
+            </div>
+        </div>
+
+        <div class="section-label">Experience</div>
+        <div class="list-section">
+            <div class="list-item">
+                <div class="item-title">Admin Accounting</div>
+                <div class="item-sub">PT Jalak Kargo Logistik</div>
+                <div class="item-meta">October 2024 – Now · Yogyakarta, Indonesia</div>
+                <p>Monitored cash flow and ensured timely payments to optimize financial planning. Maintained accurate records using MYOB and ACCURATE, enabling faster reporting and completing end-of-month reports 2 days early.</p>
+            </div>
+            <div class="list-item">
+                <div class="item-title">Coordinator Trainee (Operation)</div>
+                <div class="item-sub">PT Lancar Wiguna Sejahtera (Lawson Indonesia)</div>
+                <div class="item-meta">June 2023 – March 2024 · Jakarta, Indonesia</div>
+                <p>Achieved a 10% increase in transactions per day within a month resulting in 7.5% net sales increase by implementing targeted promotional campaigns and product placement strategies. Led a team of 10 employees in enhancing quality service by 4% (to 82%) through regular training sessions and performance monitoring.</p>
+            </div>
+        </div>
+
+        <div class="section-label">Education</div>
+        <div class="list-section">
+            <div class="list-item">
+                <div class="item-title">Big Data &amp; Predictive Analytics</div>
+                <div class="item-sub">Universitas Amikom Yogyakarta (AMIKOM)</div>
+                <div class="item-meta">August 2025 – Now · PJJ Informatics Engineering</div>
+                <p>Majoring in Informatics Engineering, accredited with 'Very Good' rating.</p>
+            </div>
+            <div class="list-item">
+                <div class="item-title">Mathematics Education</div>
+                <div class="item-sub">Universitas Negeri Semarang (UNNES)</div>
+                <div class="item-meta">August 2017 – January 2023 · GPA 3.46/4.00</div>
+                <p>Majoring in Mathematics, A-accredited. Thesis on mathematical problem-solving ability analysis.</p>
+            </div>
         </div>
 
         <footer>
@@ -199,7 +309,7 @@
                 <a href="mailto:tangguhislamw@gmail.com">Email</a>
                 <a href="tel:+6282135829644">+62821 35829644</a>
             </div>
-            © 2026 Tangguh Islam
+            © 2026 Tangguh Islam Wicaksana
         </footer>
     </main>
 </body>
