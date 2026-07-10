@@ -21,7 +21,7 @@
                 <span>Python</span><span>Tesseract OCR</span><span>OpenPyXL</span><span>Pillow</span>
             </div>
             <div class="case-links">
-                <span style="color:#666;font-size:0.85rem;">🚧 Work in Progress</span>
+                <span style="color:#666;font-size:0.85rem;">Completed</span>
             </div>
         </div>
 
@@ -68,8 +68,30 @@
         </div>
 
         <div class="case-section">
+            <h2>Screenshots</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <img src="/images/architecture.png" alt="Architecture Diagram">
+                    <div class="caption">System architecture — wa-bridge sends photos via webhook to FastAPI worker, which runs OCR and stores results in Supabase + Google Sheets.</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/images/extend%20ai%20dashboard.png" alt="Extend AI Dashboard">
+                    <div class="caption">Extend AI OCR dashboard showing processed images and extracted text.</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/images/googlesheet.png" alt="Google Sheet Output">
+                    <div class="caption">Google Sheet with OCR results: sender, photo file, WhatsApp timestamp, extracted date/time, and raw OCR text.</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/images/supabase%20log.png" alt="Supabase Log">
+                    <div class="caption">Supabase table storing scraped messages and OCR results with timestamps.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
             <h2>Status</h2>
-            <p style="color:#666;">🚧 This project is still under development. Check back later for updates, or follow the project on GitHub.</p>
+            <p style="color:#666;">Completed. The pipeline is running in production processing WhatsApp group photos in real time.</p>
         </div>
     </main>
 
