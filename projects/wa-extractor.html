@@ -18,7 +18,7 @@
         <div class="case-header">
             <h1>WhatsApp Timestamp Extractor</h1>
             <div class="case-stack">
-                <span>Python</span><span>Tesseract OCR</span><span>OpenPyXL</span><span>Pillow</span>
+                <span>Python</span><span>FastAPI</span><span>Extend AI</span><span>Supabase</span><span>Google Sheets</span><span>Tesseract OCR</span>
             </div>
             <div class="case-links">
                 <span style="color:#666;font-size:0.85rem;">Completed</span>
@@ -34,25 +34,34 @@
             <h2>Architecture</h2>
             <div class="mermaid-container">
                 <div class="arch-diagram">
-<span class="box">┌──────────────────┐      ┌─────────────────────┐      ┌──────────────────────┐      ┌──────────────────┐</span>
-<span class="box">│   WhatsApp       │─────▶│   Parse Export      │─────▶│   Tesseract OCR     │─────▶│   Excel Report   │</span>
-<span class="box">│   Chat Export    │      │   Map photo →       │      │   Multi-pass per    │      │   Sender, Photo, │</span>
-<span class="box">│   _chat.txt      │      │   sender name        │      │   image (grayscale, │      │   Timestamp      │</span>
-<span class="box">└──────────────────┘      └─────────────────────┘      │   high contrast,    │      └──────────────────┘</span>
-                                                          │   threshold)         │
-                                                          └──────────────────────┘
+<span class="box">┌───────────────────┐     POST /webhook     ┌────────────────────────────┐</span>
+<span class="box">│   wa-bridge       │──────────────────────▶│   FastAPI Worker (:8080)   │</span>
+<span class="box">│  (whatsapp-web.js) │                       │                            │</span>
+<span class="box">│                   │                       │   save_media()             │</span>
+<span class="box">│   Captures photos  │                       │         ↓                  │</span>
+<span class="box">│   from groups     │                       │   Extend AI OCR (primary)   │</span>
+<span class="box">└───────────────────┘                       │                            │</span>
+                                              │         ↓                  │
+                                              │  ┌────┴────┐               │
+                                              │  ↓         ↓               │
+                                              │ Supabase   Google Sheets   │
+                                              │ (messages  (append row)   │
+                                              │  + OCR)                    │
+                                              └────────────────────────────┘
                 </div>
             </div>
+            <p style="margin-top:0.75rem;color:#999;font-size:0.85rem;">Two modes available: <strong>Live</strong> (wa-bridge → webhook → real-time OCR) and <strong>Batch</strong> (WhatsApp export ZIP → OCR → Excel report). Tesseract OCR is available as a fallback engine in batch mode.</p>
         </div>
 
         <div class="case-section">
-            <h2>Planned Features</h2>
+            <h2>Features</h2>
             <ul>
-                <li>Parse WhatsApp export zip to extract photo-to-sender mapping</li>
-                <li>Multi-pass OCR with different preprocessing for each image</li>
-                <li>Date/time pattern recognition from OCR output</li>
-                <li>Excel report with sender, photo filename, extracted timestamp</li>
-                <li>Summary statistics by person</li>
+                <li>Real-time OCR via Extend AI API with high accuracy on timestamp text</li>
+                <li>WhatsApp Web integration — captures photos automatically from groups</li>
+                <li>Dual storage: Supabase for queryable records, Google Sheets for live reporting</li>
+                <li>Batch mode for processing WhatsApp export ZIPs</li>
+                <li>Date/time pattern recognition from raw OCR output</li>
+                <li>Excel report generation with sender, photo, and extracted timestamps</li>
             </ul>
         </div>
 
@@ -60,10 +69,14 @@
             <h2>Tech Stack</h2>
             <ul>
                 <li><strong>Python 3</strong> — Core programming language</li>
-                <li><strong>Tesseract (tesserocr)</strong> — OCR engine for text extraction from images</li>
+                <li><strong>FastAPI</strong> — Web server for live webhook pipeline</li>
+                <li><strong>Extend AI OCR API</strong> — Primary OCR engine for real-time timestamp extraction</li>
+                <li><strong>Tesseract (tesserocr)</strong> — Fallback OCR engine for batch mode</li>
+                <li><strong>Supabase</strong> — Stores scraped messages and OCR results</li>
+                <li><strong>Google Sheets API</strong> — Appends OCR results as rows for live reporting</li>
                 <li><strong>Pillow</strong> — Image preprocessing (grayscale, contrast, threshold)</li>
-                <li><strong>OpenPyXL</strong> — Excel report generation</li>
-                <li><strong>python-dateutil</strong> — Flexible date/time parsing</li>
+                <li><strong>OpenPyXL</strong> — Excel report generation (batch mode)</li>
+                <li><strong>whatsapp-web.js</strong> — WhatsApp Web client for the live bridge</li>
             </ul>
         </div>
 
